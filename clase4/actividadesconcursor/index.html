@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema de Seguidores (Grafo - Lista de Adyacencia)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Seguidores</h1>
+        <p>Modelo de red social usando grafo con lista de adyacencia</p>
+    </header>
+
+    <main>
+        <section class="panel">
+            <h2>Usuarios</h2>
+            <form id="form-add-user" class="row">
+                <input id="newUser" type="text" placeholder="Nombre de usuario" required>
+                <button type="submit">Agregar usuario</button>
+            </form>
+            <ul id="usersList" class="list"></ul>
+        </section>
+
+        <section class="panel">
+            <h2>Relaciones</h2>
+            <form id="form-follow" class="row">
+                <input id="follower" type="text" placeholder="Seguidor (quien sigue)" required>
+                <input id="followed" type="text" placeholder="Seguido (a quien sigue)" required>
+                <button type="submit">Seguir</button>
+                <button id="btn-unfollow" type="button">Dejar de seguir</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Consultas</h2>
+            <form id="form-query" class="row">
+                <input id="queryUser" type="text" placeholder="Usuario a consultar" required>
+                <button type="submit">Consultar</button>
+            </form>
+            <div class="grid">
+                <div>
+                    <h3>Seguidos (out-edges)</h3>
+                    <ul id="followingList" class="list"></ul>
+                </div>
+                <div>
+                    <h3>Seguidores (in-edges)</h3>
+                    <ul id="followersList" class="list"></ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Grafo (Lista de Adyacencia)</h2>
+            <pre id="graphDump" class="code"></pre>
+        </section>
+    </main>
+
+    <footer>
+        <small>Persistencia local con localStorage</small>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
